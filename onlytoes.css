@@ -224,7 +224,7 @@ main {
   align-content: center;
   justify-content: center;
   height: 100%;
-  border: 1px solid grey;
+  
 }
 
 .form-container {
@@ -287,6 +287,29 @@ form {
   
 }
 
+/* Socials */
+
+.social-links {
+  position: absolute; /* Align links horizontally in the center */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 85%;
+  right: 41%;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 30px; /* Adjust the horizontal spacing between links */
+}
+
+.social-links img {
+  width: 50px; /* Adjust the size of the social media icons */
+  height: 50px;
+}
+
+
+
 
 /* field animation */
 
@@ -325,7 +348,7 @@ form {
 }
 
 .input:valid {
-  color: white;
+  color: #00AFF0;
 }
 
 /* gradient */
@@ -391,6 +414,7 @@ form {
   transform: scaleX(1);
   background-position: left;
   color: black;
+  border-color: white;
 }
 
 .submit-text {
@@ -408,8 +432,7 @@ form {
 }
 
 .submit:hover + .submit-text {
-  color: black;
-  
+  color: white;
 }
   
 
