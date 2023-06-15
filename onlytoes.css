@@ -223,6 +223,8 @@ main {
   display: flex;
   align-content: center;
   justify-content: center;
+  height: 100%;
+  border: 1px solid grey;
 }
 
 .form-container {
@@ -231,38 +233,58 @@ main {
   align-content: center;
   justify-content: center;
   border-radius: 40px;
-  box-shadow: 0px 5px 5px 5px white, 0px 15px 5px 8px rgba(0,175,240,0.2);
-  margin-top: 40%;
-  height: 40%;
-  width: 80%;
+  border: 1px solid grey;
+  
+  margin-top: 25%;
+  height: 60%;
+  width: 58%;
+  
+}
+
+.form-container::before {
+  content: "";
+  position: absolute;
+  margin-top: -13px;
+  height: 60%;
+  width: 100%;
+  border-top: 9px solid #00AFF0; 
+  border-radius: 35px;
   
 }
 
 img {
   display: flex;
   border-radius: 40px;
-  opacity: 0.2;
+  opacity: 1;
   position: absolute;
-  height: 100%;
-  width: 100%;
-  background: black;
+  height: 60px;
+  width: 42%;
+  background: white;
   z-index: -1;
-  box-shadow: 5px 5px 5px 5px #00AFF0;
+  margin-top: 5%;
   }
 
 
 form {
-  --text-color: grey;
+  display: block;
+  margin-top: 45px;
+  --text-color: black;
   max-width: 500px;
   align-content: center;
   justify-content: center;
+  
+  width: auto;
+  
+  
 }
 
 .field {
   width: 100%;
+  height: auto;
   position: relative;
   border-bottom: 2px dashed var(--text-color);
   margin: 4rem auto 1rem;
+  
 }
 
 
@@ -348,9 +370,10 @@ form {
 }
 
 .submit {
-  background: linear-gradient(to left, black 50%, #00AFF0 50%) right;
+  background: linear-gradient(to left, white 50%, #00AFF0 50%) right;
   background-size: 200%;
   border-color: #00AFF0;
+  border-radius: 5px;
   color: #00AFF0;
   z-index: 3;
   box-shadow: 0px 2px 8px 0px grey;
@@ -358,14 +381,14 @@ form {
   margin: 0px;
   transition: 400ms ease-out;
   transform-origin: 0%;
-  height: 20px;
+  height: 35px;
   width: 5rem;
   position: absolute;
- 
 }
 
+
 .submit:hover {
-  transform: scaleX(2);
+  transform: scaleX(1);
   background-position: left;
   color: black;
 }
@@ -376,15 +399,17 @@ form {
   z-index: 4;
   font-size: 0.8rem;
   text-align: center;
-  top: 50%;
-  color: #00AFF0;
+  margin-top: 10%;
+  color: black;
   transition: 400ms ease-out;
   transform-origin: 0%;
-  
+  margin-left: 25%;
+  font-family: 'Franklin Gothic Medium', Arial;
 }
 
 .submit:hover + .submit-text {
   color: black;
+  
 }
   
 
@@ -394,4 +419,64 @@ form {
   display: block;
   align-content: center;
   justify-content: center;
+  position: absolute;
+  bottom: 85px;
+  right: 50px;
+}
+
+/*extra tests*/
+
+.switch {
+  position: relative;
+  display: inline-block;
+  border-radius: 80px;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 1;
+  width: 100px;
+  height: 10px;
+  border-radius: 80px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 100px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  border-radius: 80px;
+  background-color: black;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
